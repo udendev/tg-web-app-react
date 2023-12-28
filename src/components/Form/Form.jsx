@@ -13,7 +13,7 @@ const Form = () => {
         tg.MainButton.setParams({
             text: 'Отправить данные',
         });
-    }, []);
+    }, [tg]);
 
     useEffect(() => {
         if (!street || !country) {
