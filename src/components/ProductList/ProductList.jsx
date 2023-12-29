@@ -1,9 +1,9 @@
 import './ProductList.css';
 import ProductItem from '../ProductItem/ProductItem';
 import { useTelegram } from '../../hooks/useTelegram';
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
-API_URL = 'http://192.168.0.87:8000/web-data';
+const API_URL = 'http://192.168.0.87:8000/web-data';
 
 const products = [
     { id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые' },
@@ -26,7 +26,7 @@ const ProductList = () => {
         const data = {
             queryId,
             products: addedItems,
-            totalPrice: getTotalPrice(addedItems),
+            totalPrice: calcTotalPrice(addedItems),
         };
 
         fetch(API_URL, {
