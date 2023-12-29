@@ -3,11 +3,6 @@ import ProductItem from '../ProductItem/ProductItem';
 import { useTelegram } from '../../hooks/useTelegram';
 import { useState } from 'react';
 
-// import dotenv from 'dotenv';
-// dotenv.config();
-
-// const API_URL = process.env.API_URL;
-
 const products = [
     { id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые' },
     { id: '2', title: 'Куртка', price: 4000, description: 'Красного цвета, прямые' },
