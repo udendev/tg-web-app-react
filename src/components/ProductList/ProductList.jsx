@@ -3,10 +3,10 @@ import ProductItem from '../ProductItem/ProductItem';
 import { useTelegram } from '../../hooks/useTelegram';
 import { useState } from 'react';
 
-import dotenv from 'dotenv';
-dotenv.config();
+// import dotenv from 'dotenv';
+// dotenv.config();
 
-const API_URL = process.env.API_URL;
+// const API_URL = process.env.API_URL;
 
 const products = [
     { id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые' },
@@ -32,14 +32,14 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
         };
 
-        fetch(API_URL + '/web-data', {
+        fetch('http://192.168.0.87:8000/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
         });
-    }, [tg, queryId]);
+    }, [tg, queryId, addedItems]);
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData);
