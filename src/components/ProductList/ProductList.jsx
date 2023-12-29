@@ -3,7 +3,7 @@ import ProductItem from '../ProductItem/ProductItem';
 import { useTelegram } from '../../hooks/useTelegram';
 import { useState, useCallback, useEffect } from 'react';
 
-const API_URL = 'https://fc78e511-097f-4a15-9c86-31ae52a4f327.selcdn.net/web-data';
+const API_URL = 'http://89.111.174.107:8080/';
 
 const products = [
     { id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые' },
