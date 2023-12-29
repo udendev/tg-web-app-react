@@ -3,6 +3,8 @@ import ProductItem from '../ProductItem/ProductItem';
 import { useTelegram } from '../../hooks/useTelegram';
 import { useState } from 'react';
 
+API_URL = 'http://192.168.0.87:8000/web-data';
+
 const products = [
     { id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые' },
     { id: '2', title: 'Куртка', price: 4000, description: 'Красного цвета, прямые' },
@@ -27,7 +29,7 @@ const ProductList = () => {
             totalPrice: getTotalPrice(addedItems),
         };
 
-        fetch('http://192.168.0.87:8000/web-data', {
+        fetch(API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
