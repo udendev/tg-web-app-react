@@ -9,13 +9,14 @@ import Form from './components/Form/Form';
 import ProductList from './components/ProductList/ProductList';
 
 function App() {
-    const { tg } = useTelegram();
+    const { tg, queryId } = useTelegram();
     useEffect(() => {
         tg.ready();
     }, [tg]);
 
     return (
         <div className="App">
+            {queryId}
             <Header />
             <Routes>
                 <Route index element={<ProductList />}></Route>
